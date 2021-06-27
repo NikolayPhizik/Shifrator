@@ -1,0 +1,106 @@
+body {
+	background-image: url(../bg/bg.jpg);
+}
+
+.coder {
+	display: block;
+}
+
+.decoder {
+	display: none;
+}
+
+.wrapper {
+	width: 920px;
+	margin: 0 auto;
+	font-family: 'Akaya Kanadaka', cursive;
+	text-shadow: 0px 0px 25px rgba(256,256,256,0.6);
+}
+
+.coder,
+.decoder {
+	margin: 30px auto;
+	background: linear-gradient(#14415d, #4f6d90);
+	border-radius: 20px;
+}
+
+.coder > div,
+.decoder > div {
+	height: 20px;
+}
+
+.coder > button,
+.decoder > button {
+	margin-left: 25px;
+	height: 30px;
+	width: 120px;
+	font-size: 14px;
+	border-radius: 20px;
+	background: linear-gradient(#81181f, #f47b84);
+	color: #FFF;
+}
+
+.coder > button:hover,
+.decoder > button:hover {
+	background: linear-gradient(#f47b84, #81181f);
+}
+
+h1 {
+	text-align: center;
+	color: #fff;
+}
+
+.text-enter > label,
+.result > label {
+	display: block;
+	color: #fff;
+	font-size: 22px;
+	margin-left: 45px;
+	margin-bottom: 10px;
+}
+
+.text-enter > textarea,
+.result > textarea {
+	display: block;
+	min-height: 100px;
+	width: 880px;
+	max-width: 880px;
+	min-width: 880px;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+.password-enter > label {
+	display: inline-block;
+	color: #FFF;
+	font-size: 18px;
+	margin-top: 30px;
+	margin-left: 330px;
+	margin-right: 20px;
+}
+
+.password-enter > input {
+	width: 245px;
+	height: 20px;
+	border-radius: 10px;
+}
+
+.result {
+	margin-bottom: 15px;
+}
+
+form > button {
+	position: relative;
+	left: 382px;
+	height: 40px;
+	width: 150px;
+	font-size: 16px;
+	border-radius: 20px;
+	margin-bottom: 15px;
+	background: linear-gradient(#fe0517, #f77365);
+	color: #FFF;
+}
+
+form > button:hover {
+	background: linear-gradient(#f77365, #fe0517);
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Шифратор</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="coder">
+			<div></div>
+			<button class="button" name="submit">Шифратор</button>
+			<button class="button" name="submit">Дешифратор</button>
+			<h1>Шифратор</h1>
+			<form>
+				<div class="text-enter">
+					<label>Введите сюда текст для шифрования</label>
+					<textarea name="comment"></textarea>
+				</div>
+				<div class="password-enter">
+					<label>Введите пароль для шифрования</label>
+					<input type="password" name="password">
+				</div>
+				<div class="result">
+					<label>Результат шифрования</label>
+					<textarea name="comment"></textarea>
+				</div>
+				<button class="button" name="submit">Зашифровать</button>
+			</form>
+		</div>
+		<div class="decoder">
+			<div></div>
+			<button class="button" name="submit">Шифратор</button>
+			<button class="button" name="submit">Дешифратор</button>
+			<h1>Дешифратор</h1>
+			<form>
+				<div class="text-enter">
+					<label>Введите сюда для расшифровки</label>
+					<textarea name="comment"></textarea>
+				</div>
+				<div class="password-enter">
+					<label>Введите пароль шифрования</label>
+					<input type="text" name="username">
+				</div>
+				<div class="result">
+					<label>Результат дешифрования</label>
+					<textarea name="comment"></textarea>
+				</div>
+				<button class="button" name="submit">Расшифровать</button>
+			</form>
+		</div>
+	</div>
+<script src="js/script.js"></script>
+</body>
+</html>
