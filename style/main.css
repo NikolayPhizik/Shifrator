@@ -2,12 +2,12 @@ body {
 	background-image: url(../bg/bg.jpg);
 }
 
-.coder {
-	display: block;
+.hide {
+	display: none;
 }
 
-.decoder {
-	display: none;
+.show {
+	display: block;
 }
 
 .wrapper {
@@ -17,9 +17,8 @@ body {
 	text-shadow: 0px 0px 25px rgba(256,256,256,0.6);
 }
 
-.coder,
-.decoder {
-	margin: 30px auto;
+.wrapper {
+	margin: 60px auto;
 	background: linear-gradient(#14415d, #4f6d90);
 	border-radius: 20px;
 }
@@ -29,8 +28,7 @@ body {
 	height: 20px;
 }
 
-.coder > button,
-.decoder > button {
+.zakladki > button {
 	margin-left: 25px;
 	height: 30px;
 	width: 120px;
@@ -38,10 +36,10 @@ body {
 	border-radius: 20px;
 	background: linear-gradient(#81181f, #f47b84);
 	color: #FFF;
+	margin-top: 20px;
 }
 
-.coder > button:hover,
-.decoder > button:hover {
+.zakladki > button:hover {
 	background: linear-gradient(#f47b84, #81181f);
 }
 

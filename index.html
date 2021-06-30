@@ -9,44 +9,43 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div class="coder">
-			<div></div>
-			<button class="button" name="submit">Шифратор</button>
-			<button class="button" name="submit">Дешифратор</button>
+		<div></div>
+		<div class="zakladki">
+			<button class="btn" name="submit">Шифратор</button>
+			<button class="btn" name="submit">Дешифратор</button>
+		</div>
+		<div class="coder tab">
 			<h1>Шифратор</h1>
 			<form>
 				<div class="text-enter">
 					<label>Введите сюда текст для шифрования</label>
-					<textarea name="comment"></textarea>
+					<textarea class="textEnter" name="comment"></textarea>
 				</div>
 				<div class="password-enter">
 					<label>Введите пароль для шифрования</label>
-					<input type="password" name="password">
+					<input class="passwordEnter" type="password" name="password">
 				</div>
 				<div class="result">
 					<label>Результат шифрования</label>
-					<textarea name="comment"></textarea>
+					<textarea class="coder-text" name="comment"></textarea>
 				</div>
 				<button class="button" name="submit">Зашифровать</button>
 			</form>
 		</div>
-		<div class="decoder">
-			<div></div>
-			<button class="button" name="submit">Шифратор</button>
-			<button class="button" name="submit">Дешифратор</button>
+		<div class="decoder tab">
 			<h1>Дешифратор</h1>
 			<form>
 				<div class="text-enter">
 					<label>Введите сюда для расшифровки</label>
-					<textarea name="comment"></textarea>
+					<textarea class="textEnter" name="comment"></textarea>
 				</div>
 				<div class="password-enter">
 					<label>Введите пароль шифрования</label>
-					<input type="text" name="username">
+					<input class="passwordEnter" type="password" name="password">
 				</div>
 				<div class="result">
 					<label>Результат дешифрования</label>
-					<textarea name="comment"></textarea>
+					<textarea class="coder-text" name="comment"></textarea>
 				</div>
 				<button class="button" name="submit">Расшифровать</button>
 			</form>
