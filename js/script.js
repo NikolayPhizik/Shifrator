@@ -7,6 +7,7 @@ let textEnter = document.querySelectorAll(".textEnter");
 let coderText = document.querySelectorAll(".coder-text");
 let button = document.querySelectorAll(".button");
 let passwordEnter = document.querySelectorAll(".passwordEnter");
+let resultat = document.querySelectorAll(".result>textarea");
 let text;
 let password;
 
@@ -27,7 +28,7 @@ const objectCoder = {
     "п": 128, "П": 129, "р": 130, "Р": 131, "о": 132, "О": 133, "л": 134, "Л": 135, "д": 136,
     "Д": 137, "ж": 138, "Ж": 139, "э": 140, "Э": 141, "я": 142, "Я": 143, "ч": 144, "Ч": 145,
     "с": 146, "С": 147, "м": 148, "М": 149, "и": 150, "И": 151, "т": 152, "Т": 153, "ь": 154,
-    "Ь": 155, "б": 156, "Б": 157, "ю": 158, "Ю": 159, " ": 160
+    "Ь": 155, "б": 156, "Б": 157, "ю": 158, "Ю": 159, " ": 160, "«": 161, "»": 162
 };
 
 const objectDecoder = {
@@ -46,8 +47,8 @@ const objectDecoder = {
     119: "Ъ", 120: "ф", 121: "Ф", 122: "ы", 123: "Ы", 124: "в", 125: "В", 126: "а", 127: "А",
     128: "п", 129: "П", 130: "р", 131: "Р", 132: "о", 133: "О", 134: "л", 135: "Л", 136: "д",
     137: "Д", 138: "ж", 139: "Ж", 140: "э", 141: "Э", 142: "я", 143: "Я", 144: "ч", 145: "Ч",
-    146: "с", 147: "С", 148: "м", 149: "М", 150: "и", 151: "И", 152: "т", 153: "Т", 154: "ь",
-    155: "Ь", 156: "б", 157: "Б", 158: "ю", 159: "Ю", 160: " "
+    156: "с", 147: "С", 148: "м", 149: "М", 150: "и", 151: "И", 152: "т", 153: "Т", 154: "ь",
+    155: "Ь", 156: "б", 157: "Б", 158: "ю", 159: "Ю", 160: " ", 161: "«", 162: "»"
 };
 
 function hideCoderDecoder() {
@@ -80,36 +81,78 @@ button.forEach((item, i) => {
     item.addEventListener('click', (evt) => {
         evt.preventDefault();
         start(i);
-    });
+    })
 });
 
 function start(i) {
     let arr1 = [];
     let arr2 = [];
-    let j = 0;
+    let array = [];
+    let array2 = [];
+    let hex;
     text = textEnter[i].value;
     password = passwordEnter[i].value; 
-    text = text.split("");
-    password = password.split("");
-    text.forEach((item) => {
-        arr1.push(units(item));
-    });
-    
-    for (let n = 0; n < arr1.length; n++) {
-        while (j < password.length) {
-            arr2.push(password[n + j]);
-            if (arr2.length === arr1.length) {
-                break;
-            }
-            j++;
+    if (i === 0) {
+        text = text.split("");
+        password = password.split("");
+        text.forEach((item) => {
+            arr1.push(units(item));
+        });
+        console.log(arr1);
+        for (let j = 0; j < arr1.length; j++) {
+            password.forEach((item) => {
+                if (arr1.length !== arr2.length) {
+                    arr2.push(units(item));
+                }
+            });
         }
-        j = 0;
-    }
-    console.log(password.length);
-    console.log(arr1);
-    console.log(arr2);
+        for (let x = 0; x < arr1.length; x++) {
+            array.push(arr1[x] + arr2[x]);
+        }
+        for (let y = 0; y < array.length; y++) {
+            hex = array[y];
+            hex = hex.toString(16);
+            if (hex.length == 1) {
+                hex = `00${hex}`;
+                array2.push(hex);
+            } else if (hex.length == 2) {
+                hex = `0${hex}`;
+                array2.push(hex);
+            }
+        }
+        let str = array2.join(" ");
+        resultat[i].textContent = str;
+    } else if (i === 1) {
+        text = text.split(" ");
+        password = password.split("");
+        for (let y = 0; y < text.length; y++) {
+            hex = text[y];
+            hex = parseInt(hex, 16);
+            arr1.push(hex);
+        }
+        for (let j = 0; j < arr1.length; j++) {
+            password.forEach((item) => {
+                if (arr1.length !== arr2.length) {
+                    arr2.push(units(item));
+                }
+            });
+        }
+        for (let x = 0; x < arr1.length; x++) {
+            array.push(arr1[x] - arr2[x]);
+        }
+        array.forEach((item) => {
+            array2.push(units2(item));
+        });
+        
+        let str = array2.join("");
+        resultat[i].textContent = str;
+    } 
 }
 
 function units(key) {
     return objectCoder[key];
+}
+
+function units2(key) {
+    return objectDecoder[key];
 }
