@@ -46,7 +46,7 @@ const objectDecoder = {
     119: "Ъ", 120: "ф", 121: "Ф", 122: "ы", 123: "Ы", 124: "в", 125: "В", 126: "а", 127: "А",
     128: "п", 129: "П", 130: "р", 131: "Р", 132: "о", 133: "О", 134: "л", 135: "Л", 136: "д",
     137: "Д", 138: "ж", 139: "Ж", 140: "э", 141: "Э", 142: "я", 143: "Я", 144: "ч", 145: "Ч",
-    156: "с", 147: "С", 148: "м", 149: "М", 150: "и", 151: "И", 152: "т", 153: "Т", 154: "ь",
+    146: "с", 147: "С", 148: "м", 149: "М", 150: "и", 151: "И", 152: "т", 153: "Т", 154: "ь",
     155: "Ь", 156: "б", 157: "Б", 158: "ю", 159: "Ю", 160: " "
 };
 
@@ -80,19 +80,34 @@ button.forEach((item, i) => {
     item.addEventListener('click', (evt) => {
         evt.preventDefault();
         start(i);
-    })
+    });
 });
 
 function start(i) {
+    let arr1 = [];
+    let arr2 = [];
+    let j = 0;
     text = textEnter[i].value;
     password = passwordEnter[i].value; 
     text = text.split("");
-    let arr = [];
+    password = password.split("");
     text.forEach((item) => {
-        arr.push(units(item));
+        arr1.push(units(item));
     });
-    console.log(arr);
-    console.log(text);
+    
+    for (let n = 0; n < arr1.length; n++) {
+        while (j < password.length) {
+            arr2.push(password[n + j]);
+            if (arr2.length === arr1.length) {
+                break;
+            }
+            j++;
+        }
+        j = 0;
+    }
+    console.log(password.length);
+    console.log(arr1);
+    console.log(arr2);
 }
 
 function units(key) {
