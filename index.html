@@ -10,47 +10,14 @@
 <body>
 	<div class="wrapper">
 		<div></div>
-		<div class="zakladki">
-			<button class="btn" name="submit">Шифратор</button>
-			<button class="btn" name="submit">Дешифратор</button>
+		<div class="selection">
+			<button class="buttonSwitchingShifrators" name="submit">Шифратор</button>
+			<button class="buttonSwitchingShifrators" name="submit">Дешифратор</button>
 		</div>
-		<div class="coder tab">
-			<h1>Шифратор</h1>
-			<form>
-				<div class="text-enter">
-					<label>Введите сюда текст для шифрования</label>
-					<textarea class="textEnter" name="comment"></textarea>
-				</div>
-				<div class="password-enter">
-					<label>Введите пароль для шифрования(анг.)</label>
-					<input class="passwordEnter" type="password" name="password">
-				</div>
-				<div class="result">
-					<label>Результат шифрования</label>
-					<textarea class="coder-text" name="comment"></textarea>
-				</div>
-				<button class="button" name="submit">Зашифровать</button>
-			</form>
-		</div>
-		<div class="decoder tab">
-			<h1>Дешифратор</h1>
-			<form>
-				<div class="text-enter">
-					<label>Введите сюда для расшифровки</label>
-					<textarea class="textEnter" name="comment"></textarea>
-				</div>
-				<div class="password-enter">
-					<label>Введите пароль шифрования(анг.)</label>
-					<input class="passwordEnter" type="password" name="password">
-				</div>
-				<div class="result">
-					<label>Результат дешифрования</label>
-					<textarea class="coder-text" name="comment"></textarea>
-				</div>
-				<button class="button" name="submit">Расшифровать</button>
-			</form>
-		</div>
+		<div class="containerId"></div>
 	</div>
-<script src="js/script.js"></script>
+
+<script src="js/shifratorBusinessLogicLayer.js"></script>
+<script src="js/shifratorUserInterface.js"></script>
 </body>
 </html>

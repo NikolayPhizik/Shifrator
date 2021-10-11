@@ -2,14 +2,6 @@ body {
 	background-image: url(../bg/bg.jpg);
 }
 
-.hide {
-	display: none;
-}
-
-.show {
-	display: block;
-}
-
 .wrapper {
 	width: 920px;
 	margin: 0 auto;
@@ -23,12 +15,11 @@ body {
 	border-radius: 20px;
 }
 
-.coder > div,
-.decoder > div {
+.tab > div {
 	height: 20px;
 }
 
-.zakladki > button {
+.selection > button {
 	margin-left: 25px;
 	height: 30px;
 	width: 120px;
@@ -39,7 +30,7 @@ body {
 	margin-top: 20px;
 }
 
-.zakladki > button:hover {
+.selection > button:hover {
 	background: linear-gradient(#f47b84, #81181f);
 }
 
